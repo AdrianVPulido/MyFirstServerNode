@@ -1,32 +1,32 @@
-'use strict' // Te obliga a declarar las variables como en Java
+'use strict' //This method forces you to declare the variables as in Java
 
-var express = require('express'); // Declaramos una variable para importar la libreria express
+var express = require('express'); // We declare a variable to import the express library
 
-var app = express(); // Llamamos al metodo express
+var app = express(); // We call the express method
 
-var api = express.Router(); //Metodo de la libreria express que sirve para enrutamiento
+var api = express.Router(); //Method of the express library that serves for routing
 
 var book =[
     {
-        id: 1,
+        id: 0,
         name: 'Guerra y Paz',
         autor: 'León Tolstói',
         editorial: 'Ubuntu',
         price: 23
     },{
-        id: 2,
+        id: 1,
         name: 'Orgullo y Prejuicio',
         autor: 'Jane Austen',
         editorial: 'Thomas Egerton',
         price: 35
     },{
-        id: 3,
+        id: 2,
         name: 'El Conde de Montecristo',
         autor: 'Alejandro Dumas',
         editorial: 'Ubuntu',
         price: 50
     },{
-        id: 4,
+        id: 3,
         name: 'Los Miserables',
         autor: 'Victor Hugo',
         editorial: 'Ubuntu',
@@ -52,15 +52,15 @@ const getBookId = (req, res) =>{
 }
 
 // Route
-api.get("/one-book", onlyBook); // Hacemos una llamada a la funcion
+api.get("/one-book", onlyBook); // We make a call to the function
 api.get('/books', getBooks);
 api.get('/book/:id', getBookId);
 
 //Base Route
-app.use("/api", api); // Raiz de nuestro sitio web
+app.use("/api", api); // Root of our website
 
-const port = 40000; // Declaramos el puerto por el cual va a escuchar nuestro servidor
+const port = 40000; // We declare the port through which our server will listen
 
 app.listen(port, () => {
-    console.log('listening on http:://localhost:' + port);// Esto es para que nuestra app
+    console.log('listening on http:://localhost:' + port);
 });            
